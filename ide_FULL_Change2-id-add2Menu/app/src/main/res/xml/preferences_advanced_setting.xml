@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:key="preference_screen">
+	<PreferenceScreen android:layout="@layout/preference_header_item" android:title="@string/preference_head_title_application" android:summary="@string/preference_head_summary_application">
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="Theme">
+			<com.s1243808733.aide.preference.PreferenceTheme />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="permissions" android:key="managePermissionCategory">
+			<PreferenceScreen android:title="Grant optional permissions" android:key="managePermissionScreen">
+				<Preference android:title="Manage all file management permissions" android:key="requestManageAllFile" />
+				<Preference android:title="Manage draw overlays permissions" android:key="requestAlertWindow" android:summary="Used to create a 1x1 pixel view to maintain background stability" />
+				<Preference android:title="Request to ignore battery optimization" android:key="requestIgnoreBatteryOptimizations" />
+			</PreferenceScreen>
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="file browser">
+			<SwitchPreference android:title="Sidebar browser" android:key="advanced_setting_enable_drawer" android:summary="Whether to enable the side-sliding bar browser" android:defaultValue="true" />
+			<SwitchPreference android:title="Enable FAB button" android:key="enableMainMasterButton" android:dependency="advanced_setting_enable_drawer" android:defaultValue="false" />
+			<SwitchPreference android:title="Enable DrawerToggle" android:key="enableDrawerToggle" android:dependency="advanced_setting_enable_drawer" android:defaultValue="true" />
+			<SwitchPreference android:title="Display folder information" android:key="file_browser_display_folder_info" android:defaultValue="false" />
+			<SwitchPreference android:title="Display file information" android:key="file_browser_display_file_info" android:defaultValue="false" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="window">
+			<SwitchPreference android:title="ActionBar Tab text lowercase" android:key="tab_text_lowercase" android:defaultValue="true" />
+			<SwitchPreference android:title="ActionBar Tab display file icon" android:key="tab_display_file_icon" android:defaultValue="false" />
+			<SwitchPreference android:title="ActionBar show shadow" android:key="action_bar_container_use_elevation" android:defaultValue="false" />
+			<SwitchPreference android:title="immersion status bar" android:key="immersion_statusbar" android:defaultValue="true" />
+			<SwitchPreference android:title="Drag back to activity" android:key="aide_pro_drag_back" android:defaultValue="false" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+	</PreferenceScreen>
+	<PreferenceScreen android:layout="@layout/preference_header_item" android:title="@string/preference_head_title_editor" android:summary="@string/preference_head_summary_editor">
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="editor">
+			<Preference android:title="Color Scheme" android:key="preference_highlight" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="completion">
+			<SwitchPreference android:title="Display ApiVersion information" android:key="completion_show_api_info" android:summary="Display in which SDK version the API was added/deprecated/removed" android:defaultValue="true" />
+			<SwitchPreference android:title="Expand the scope of Api search" android:key="completion_use_contains" android:summary="All matching results will be displayed" android:defaultValue="false" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="symbol">
+			<Preference android:title="Custom shortcut symbols" android:key="preference_quick_key" android:summary="Custom editor shortcut symbols" />
+			<SwitchPreference android:title="Disable shortcut symbols" android:key="disable_quickkeybar" android:defaultValue="false" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="font">
+			<EditTextPreference android:hint="font path" android:selectAllOnFocus="true" android:title="Editor font" android:key="advanced_setting_editor_font" android:summary="Set the editor font. " />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="background">
+			<EditTextPreference android:hint="Editor background" android:selectAllOnFocus="true" android:title="picture path" android:key="advanced_setting_editor_bg" android:summary="Set editor background picture" />
+			<Preference android:title="Select picture" android:key="choose_bg_image" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+	</PreferenceScreen>
+	<PreferenceScreen android:layout="@layout/preference_header_item" android:title="@string/preference_head_title_build" android:summary="@string/preference_head_summary_build">
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="Gradle">
+			<SwitchPreference android:title="Enable Gradle" android:key="advanced_setting_enable_gradle" android:summary="Full Gradle, SDK, JDK support" android:defaultValue="false" />
+			<Preference android:title="Gradle install/uninstall" android:key="aidepro_gradle_configure" />
+			<Preference android:title="NDK install/uninstall" android:key="aidepro_gradle_ndk" android:summary="If you use Gradle to build and the project contains C/C++ code, you need to install Gradle-specific NDK here first" />
+			<Preference android:title="Custom commands" android:key="aidepro_custom_cmd" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="obfuscator">
+			<PreferenceScreen android:title="App Obfuscator" android:summary="">
+				<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="Resguard">
+					<SwitchPreference android:title="Enable resguard" android:key="advanced_setting_enable_resguard" android:summary="Confuse res, shorten file name, reduce APK size." android:defaultValue="false" />
+					<Preference android:title="Add configuration file to project" android:key="add_proguard_config" android:summary="Add Res obfuscation configuration file to the project" />
+				</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+				<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="StringFog">
+					<SwitchPreference android:title="Enable StringFog" android:key="advanced_setting_enable_stringfog" android:summary="Encrypt strings in Class at compile time" android:defaultValue="false" />
+					<Preference android:title="Function Description" android:key="preference_stringfog" />
+				</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+				<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="proguard">
+					<SwitchPreference android:title="@string/proguard_title" android:key="use_proguard" android:summary="@string/proguard_summary" android:defaultValue="false" />
+				</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+				<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="Power Obfuscation">
+					<SwitchPreference android:title="Use Obfuscation" android:key="advanced_setting_enable_obfuscation" android:summary="Encryption with more obfuscation class" android:defaultValue="false" />
+					<SwitchPreference android:title="Use Glitch Mode" android:key="advanced_setting_enable_glitch" android:summary="Encrypt with Crazy String" android:dependency="advanced_setting_enable_obfuscation" android:defaultValue="false" />
+					<SwitchPreference android:title="Hide String" android:key="advanced_setting_enable_stringobfuscation" android:summary="Encrypt string in class. Dont use if proguard active" android:dependency="advanced_setting_enable_obfuscation" android:defaultValue="false" />
+					<SwitchPreference android:title="Hidden Code" android:key="advanced_setting_enable_hideobfuscation" android:summary="Hide code in class" android:dependency="advanced_setting_enable_obfuscation" android:defaultValue="false" />
+					<SwitchPreference android:title="Local Variable" android:key="advanced_setting_enable_localobfuscation" android:summary="Obfuscate local of variable" android:dependency="advanced_setting_enable_obfuscation" android:defaultValue="false" />
+					<SwitchPreference android:title="Hide Boolean" android:key="advanced_setting_enable_booleanobfuscation" android:summary="Obfuscate boolean and hide boolean" android:dependency="advanced_setting_enable_obfuscation" android:defaultValue="false" />
+					<SwitchPreference android:title="Flow Code" android:key="advanced_setting_enable_flowobfuscation" android:summary="Flowing code to hidden" android:dependency="advanced_setting_enable_obfuscation" android:defaultValue="false" />
+					<SwitchPreference android:title="Hide Integer" android:key="advanced_setting_enable_intobfuscation" android:summary="Obfuscate Integer or number" android:dependency="advanced_setting_enable_obfuscation" android:defaultValue="false" />
+					<SwitchPreference android:title="Hide Argument" android:key="advanced_setting_enable_argobfuscation" android:summary="Obfuscate Argument and hide" android:dependency="advanced_setting_enable_obfuscation" android:defaultValue="false" />
+					<SwitchPreference android:title="Mutator Code" android:key="advanced_setting_enable_mutatorobfuscation" android:summary="Mutation code with pholymorph" android:dependency="advanced_setting_enable_obfuscation" android:defaultValue="false" />
+				</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+			</PreferenceScreen>
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="Default build APK signing">
+			<Preference android:title="APK Signature Settings" android:key="apk_signs" android:summary="Set whether to use v1, v2, v3 when compiling APK signature with default builder" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="Build">
+			
+			<SwitchPreference android:title="Use Zipalign A11 Up inst" android:key="advanced_setting_enable_zipalign" android:defaultValue="true" />
+			<SwitchPreference android:title="Dex Redivision" android:key="adset_use_dexmerger" android:defaultValue="true" />
+			<SwitchPreference android:title="Use D8 Redivision" android:key="adset_use_dexmerger_d8" android:defaultValue="false" />
+			<SwitchPreference android:title="Enable adrt debug" android:key="advanced_setting_enable_adrt" android:summary="After closing, the debug mode cannot be used. " android:defaultValue="false" />
+			<SwitchPreference android:title="Redefine Apk build path" android:key="advanced_setting_adjust_apk_build_path" android:summary="Store the packaged apk in -> project/build/bin" android:defaultValue="false" />
+			<SwitchPreference android:title="Java project make use of the Android Api" android:key="javaproject_api" android:summary="Make of the Android Api" android:defaultValue="false" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="New Class parsing library">
+			<SwitchPreference android:title="Enable the new Class parsing library" android:key="useReaderClass" android:summary="Fix the problem that the original version - the default method of the interface is incomplete when the interception is incomplete, enable optimized import, Java8 API functions depend on this library, build refresh takes effect (no error is not used)" android:defaultValue="true" />
+			<SwitchPreference android:title="Disable interface default methods (Java8 API)" android:key="disableDefaultMethod" android:summary="If disabled, comment the Java8 API, build refresh takes effect (no error is not used)" android:defaultValue="false" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+	</PreferenceScreen>
+	<PreferenceScreen android:layout="@layout/preference_header_item" android:title="Project" android:summary="Project configuration related">
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="templates">
+			<SwitchPreference android:title="Enable custom project templates" android:key="isEnableCustomTemplate" android:defaultValue="false" />
+			<EditTextPreference android:selectAllOnFocus="true" android:title="Custom project template path" android:key="CustomTemplateDir" android:defaultValue="/sdcard/.aide/data/templates" />
+			<Preference android:title="Initialize the template" android:key="init_custom_template" android:summary="will unzip the template to the current template path" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="Project">
+			<EditTextPreference android:hint="com.example." android:selectAllOnFocus="true" android:title="package name prefix" android:key="advanced_setting_package_prefix" android:summary="Set the package name prefix of the created project, and use the default if left blank." android:defaultValue="com.example." />
+			<EditTextPreference android:selectAllOnFocus="true" android:title="custom project path" android:key="project_home" android:summary="Default project path: /sdcard/AppProject" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="Add new class">
+			<SwitchPreference android:title="Class header annotation" android:key="class_header_annotation" android:summary="Automatically add a comment at the beginning when creating a new class" android:defaultValue="false" />
+			<EditTextPreference android:selectAllOnFocus="true" android:title="Configure the author name" android:key="class_header_annotation_author_name" />
+			<EditTextPreference android:hint="yyyy/MM/dd HH:mm" android:selectAllOnFocus="true" android:title="Configure the time format" android:key="class_header_annotation_date_format" android:defaultValue="yyyy/MM/dd HH:mm" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="maven">
+			<SwitchPreference android:title="Enable custom Maven download directory" android:key="advanced_setting_enable_mavenDownloadDir" android:defaultValue="false" />
+			<EditTextPreference android:selectAllOnFocus="true" android:title="Custom Maven download directory" android:key="advanced_setting_mavenDownloadDir" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+	</PreferenceScreen>
+	<PreferenceScreen android:layout="@layout/preference_header_item" android:title="Shortcut code" android:summary="Configure Shortcut code">
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="Menu code">
+			<SwitchPreference android:title="Enable" android:key="advanced_setting_enable_menu_code" android:summary="/sdcard/.aide/data/menu" android:defaultValue="true" />
+			<EditTextPreference android:selectAllOnFocus="true" android:title="Customize code file path" android:key="menucode_file" android:summary="If not set, use the default" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="auto completion">
+			<SwitchPreference android:title="Enable Gradle Auto completion" android:key="enable_gradle_comple" android:summary="Restart to take effect" android:defaultValue="false" />
+			<Preference android:title="Configure AutoComplete" android:key="gradle_comple" android:summary="separated by newlines" />
+			<EditTextPreference android:title="Custom AutoComplete File" android:key="gradle_comple_file" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+	</PreferenceScreen>
+	<PreferenceScreen android:layout="@layout/preference_header_item" android:title="Backup and restore" android:summary="recommended for regular use">
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="backup">
+			<Preference android:title="Backup" android:key="aidepro_backup" android:summary="export settings" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="restore">
+			<Preference android:title="Restore" android:key="aidepro_restore" android:summary="import settings" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+	</PreferenceScreen>
+	<PreferenceScreen android:layout="@layout/preference_header_item" android:title="Experimental functions" android:summary="It may be added or removed in a future release">
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="D8">
+			<SwitchPreference android:title="Compile the library using D8" android:key="apk_d8builder" android:defaultValue="false" />
+			<EditTextPreference android:title="Configure MinApiLevel" android:key="apk_d8builder_min_version_num" android:summary="More packing time will be added" android:defaultValue="1" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="Aapt2">
+			<SwitchPreference android:title="Enable Aapt2" android:key="test_setting_enable_aapt2" android:summary="Only support gradle project" android:defaultValue="false" />
+			<SwitchPreference android:title="Enable build Aab/Apks" android:key="test_setting_enable_build_aab_apks" android:defaultValue="false" />
+			<SwitchPreference android:title="Enable custom Apks signature" android:key="test_setting_enable_custom_apkssign" android:dependency="test_setting_enable_build_aab_apks" android:defaultValue="false" />
+			<SwitchPreference android:title="Enable ViewBinding" android:key="test_setting_enable_view_binding" android:summary="Need to add databinding-runtime dependency." android:dependency="test_setting_enable_aapt2" android:defaultValue="false" />
+			<SwitchPreference android:title="ViewBinding using AndroidX" android:key="test_setting_enable_view_binding_use_androidx" android:dependency="test_setting_enable_view_binding" android:defaultValue="true" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+		<com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="other">
+			<SwitchPreference android:title="Blur the background of the dialog" android:key="test_dialog_blur" android:summary="android12+" android:defaultValue="false" />
+			<Preference android:title="test crash" android:key="beta_test_crash" />
+		</com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+	</PreferenceScreen>
+           
+    <PreferenceScreen android:layout="@layout/preference_header_item" 
+        android:title= "No ❌Remote Control❌  ✅ Safe 🆗 Version 25 ✅" 
+        android:summary="no ✖remote control✖  ✔ dex test ✔ safe 🆗 version 25 ✔">         
+        <com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="update settings">
+            <SwitchPreference android:title="Automatically check for updates" android:key="aidero_auto_update" android:summary="Automatically check for updates every time you start" android:defaultValue="true" />
+            <ListPreference android:entries="@array/pref_update_channel_entries" android:title="Update channel" android:key="aidepro_update_channel" android:summary="The Beta version will contain some latest features and optimizations, but it is not as stable as the official version. If you want to use it more stably, it is recommended that you turn off this option" android:defaultValue="release" android:entryValues="@array/pref_update_channel_values" />
+            <Preference android:title="Check for updates" android:key="aidepro_check_update" />
+            <Preference android:title="Current version" android:key="aidepro_update_log" />
+        </com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+        <com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="contact">
+            <Preference android:title="Official website" android:key="aidero_sponsor" android:summary="https://aidepro.top" />
+            <Preference android:title="Telegram" android:key="aidepro_telegram" android:summary="https://t.me/aidemgb" />
+        </com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+        <com.s1243808733.aide.preference.NiuBiPreferenceCategory android:title="Other">
+            <Preference android:title="Developers" android:key="aidero_get_mgry" android:summary="People involved in aide development" />
+            <Preference android:title="Donation" android:key="aidero_set_sponsor" android:summary="If you think it is useful, you can choose to sponsor" />
+            <Preference android:title="Special Thanks" android:key="aidero_get_sponsor" android:summary="Thank you for your support" />
+        </com.s1243808733.aide.preference.NiuBiPreferenceCategory>
+    </PreferenceScreen>
+</PreferenceScreen>
